@@ -3,24 +3,29 @@
   padding: 0px;
   font-family: "Lucida Sans Unicode";
 }
-
+:root{
+  --background-color-1: #f8dc9a;
+  --background-color-2: #efae13;
+  
+}
 body {
   padding: 10px;
-  background-color: #eefdfd;
+  background-color: var(--background-color-1);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .report{
   border: 0px;
-  background: rgba(0, 0, 0, 0)
+  background: rgba(0, 0, 0, 0);
 }
 .delete{
   border: 0px;
-  background: rgba(0, 0, 0, 0)
+  background: rgba(0, 0, 0, 0);
 }
 .fa-flag{
  color: red; 
+  
 }
 .replies {
   margin-left: 50px;
@@ -30,7 +35,7 @@ body {
   border: 1px dotted black;
   margin: 5px;
   padding: 5px;
-  background-color: #eefdfd;
+  background-color: var(--background-color-1);
 }
 
 .newReply {
@@ -39,22 +44,32 @@ body {
 
 .thread {
   border: 2px solid black;
+  font-size: 20px;
   padding: 5px;
   margin-bottom: 5px;
   border-radius: 5px;
-  background-color: #a7f2f3;
+  background-color: var(--background-color-2);;
 }
 
 .id {
-  font-size: 10.5px;
+  font-size: 8px;
 }
 #reportThread{
-  background-color: yellow;
+  font-size: 20px;
 }
 .reportDiv{
   display: flex;
-  background-color:grey;
+  justify-content: flex-end;  
 }
 #submitNewThread {
   margin: 50px;
+}
+button {
+  font-size: 20px;
+  border: 0px;
+  align: baseline;
+  background-color: rgba(0, 0, 0, 0);
+}
+i {
+  vertical-align: baseline;
 }
