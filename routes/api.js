@@ -31,7 +31,7 @@ module.exports = function(app) {
           .get(function(req, res) {
             var board = req.params.board;
             var threadid=req.query.thread_id;
-          //console.log(threadid);
+          console.log(threadid);
             if (threadid==null || threadid == undefined || threadid.length<24){
               myAwesomeDB
               .collection(board)
@@ -105,7 +105,7 @@ module.exports = function(app) {
               .findOneAndUpdate(
                 { _id: ObjectId(threadid) },
                 { $set: { reported: true } },
-                { returnOriginal: false },
+                { returnNewDocument: true },
                 function(err, data) {
                   if (err) console.log(err);
                   else if (data.value != null) {
@@ -139,7 +139,7 @@ module.exports = function(app) {
           .get(function(req, res) {
             var threadid = req.query.thread_id;
             var board = req.params.board;
-            //console.log(req.query.thread_id)
+            console.log(req.query.thread_id)
             const myAwesomeDB = database.db("boards");
             
             if (threadid != null && threadid != undefined && threadid.length==24) {
@@ -195,7 +195,7 @@ module.exports = function(app) {
                 $inc: { replycount: 1 },
                 $set: { bumped_on: new Date() }
               },
-              { returnOriginal: false },
+              { returnNewDocument: true },
               function(err, data) {
                 if (err) console.log(err);
                 else {
@@ -217,7 +217,7 @@ module.exports = function(app) {
                 "replies._id": ObjectId(replyid)
               }, //funziona
               { $set: { "replies.$.reported": true } },
-              { returnOriginal: false },
+              { returnNewDocument: true },
               function(err, data) {
                 if (err) console.log(err);
                 else if (data.value != null) {
@@ -233,18 +233,21 @@ module.exports = function(app) {
             var deletepass= req.body.delete_password;
             var threadid = req.body.thread_id;
             var board = req.params.board;
-            console.log(req.body);
+            //console.log(req.body);
             myAwesomeDB
               .collection(board)
               .findOneAndUpdate(
                 { _id: ObjectId(threadid), "replies._id": ObjectId(replyid), "replies.delete_password": deletepass },
              //   { $pull: {"replies": {"_id": ObjectId(replyid) }}, $inc: {replycount: -1} },
-              {$set: { "replies.$.text": "[deleted]" }},
-                { returnOriginal: false },
+              {$set: { "replies.$[reply].text": "[deleted]" }},
+                { returnNewDocument: true, arrayFilters: [{"reply._id":{$eq:  ObjectId(replyid)}, "reply.delete_password": {$eq: deletepass}} ]},
                 function(err, data) {
                   if (err) console.log(err);
                   else {
-                    if (data.value!=null) res.send("success");
+                    if (data.value!=null) {res.send("success")
+                                          //console.log(data.value.replies);
+                                          //console.log(replyid);
+                                          }
                     else res.send("incorrect password");
                   };
                 }
