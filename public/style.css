@@ -1,19 +1,31 @@
+@import url("https://fonts.googleapis.com/css?family=Averia Sans Libre");
 * {
   margin: 0px;
   padding: 0px;
-  font-family: "Lucida Sans Unicode";
+  
 }
 :root{
-  --background-color-1: #f8dc9a;
-  --background-color-2: #efae13;
-  
+  --background-color-1: #333433;
+  --background-color-2: #4d4e4e;
+  --text-color-1: #0cf37a;
+  --text-color-2: #f9a01f;
 }
 body {
   padding: 10px;
   background-color: var(--background-color-1);
+  color: var(--text-color-1);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  font-family: 'Averia Sans Libre';
+}
+#boardDisplay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  background-color: yellow;
 }
 .report{
   border: 0px;
@@ -36,6 +48,7 @@ body {
   margin: 5px;
   padding: 5px;
   background-color: var(--background-color-1);
+  color: var(--text-color-2);
 }
 
 .newReply {
@@ -43,16 +56,25 @@ body {
 }
 
 .thread {
+  
   border: 2px solid black;
   font-size: 20px;
   padding: 5px;
   margin-bottom: 5px;
   border-radius: 5px;
-  background-color: var(--background-color-2);;
+  background-color: var(--background-color-2);
+  width: 100%;
 }
-
+.thread p, h3  {
+  margin-left: 20px;
+  font-weight: lighter;
+  padding: 5px;
+}
+.reply p {
+  
+}
 .id {
-  font-size: 8px;
+  font-size: 12px;
 }
 #reportThread{
   font-size: 20px;
