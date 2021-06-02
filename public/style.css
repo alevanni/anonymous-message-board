@@ -20,6 +20,10 @@ body {
   justify-content: center;
   font-family: 'Averia Sans Libre';
 }
+textarea{
+  background-color: var(--background-color-2);
+  color: var(--text-color-1);
+}
 #boardDisplay {
   display: flex;
   flex-direction: column;
@@ -27,16 +31,26 @@ body {
   width: 60%;
   background-color: yellow;
 }
+a {
+  color: var(--text-color-2);
+}
 .report{
   border: 0px;
   background: rgba(0, 0, 0, 0);
+  color: var(--text-color-2);
+  height: 25px;
+  font-size: 20px;
+  vertical-align: text-bottom;
 }
 .delete{
   border: 0px;
   background: rgba(0, 0, 0, 0);
 }
-.fa-flag{
- color: red; 
+.fa{ 
+  font-size: 25px;
+  color: var(--text-color-2);
+}
+.fa .fa-trash{
   
 }
 .replies {
@@ -70,14 +84,25 @@ body {
   font-weight: lighter;
   padding: 5px;
 }
-.reply p {
+form button {
+  display: flex;
   
+  background-color: 
+}
+ form button:hover{
+  background-color: var(--background-color-1);
+   
+}
+.newReply textarea {
+  width: 70%;
+  background-color: var(--background-color-1);
 }
 .id {
   font-size: 12px;
 }
 #reportThread{
   font-size: 20px;
+  text-align: bottom;
 }
 .reportDiv{
   display: flex;
@@ -86,12 +111,33 @@ body {
 #submitNewThread {
   margin: 50px;
 }
+.report-button{
+  border-radius: 3px;
+  
+  
+}
+.delete-button{
+  border-radius: 10px ;
+  height: 30px;
+  width: 180px;
+  align-items: text-bottom;
+}
+.text-password {
+  background-color: var(--background-color-1);
+  border-radius: 10px 0px 0px 10px;
+  margin-top: 0px;
+  border: 0px;
+  height: 27px;
+  width: 85%;
+}
 button {
   font-size: 20px;
-  border: 0px;
+  border: 0px solid white;
   align: baseline;
   background-color: rgba(0, 0, 0, 0);
+
 }
 i {
-  vertical-align: baseline;
+  
+  padding: 2px;
 }
