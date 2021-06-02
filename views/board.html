@@ -80,14 +80,14 @@
               );
               thread.push("<h3>" + ele.text + "</h3>");
               thread.push(
-                '<div class="reportDiv"><form id="reportThread"><input type="hidden" name="report_id" value="' +
+                '<div class="reportDiv"><form id="reportThread"><button class="report-button"><input type="hidden" name="report_id" value="' +
                   ele._id +
-                  '"><button ><input class="report" type="submit" value="Report"><i class="fa fa-flag"></i></button></form>'
+                  '"><input class="report" type="submit" value="Report"><i class="fa fa-flag"></i></button></form>'
               );
               thread.push(
-                '<form id="deleteThread"><input type="hidden" value="' +
+                '<form id="deleteThread"><button class="delete-button"><input type="hidden" value="' +
                   ele._id +
-                  '" name="thread_id" required=""><input type="text" placeholder="password" name="delete_password" required=""><button><input type="submit" value="Delete" class="delete"><i class="fa fa-trash"></i></button></form></div>'
+                  '" name="thread_id" required=""><input class="text-password" type="text" placeholder="password to delete" name="delete_password" required=""><input type="submit" value="" class="delete"><i class="fa fa-trash"></i></button></form></div>'
               );
               thread.push('</div><div class="replies">');
               var hiddenCount = ele.replycount - 3;
@@ -116,18 +116,18 @@
                 
                 thread.push("<p>" + rep.text + "</p>");
                 thread.push(
-                  '<div class="reportDiv"><form id="reportReply"><input type="hidden" name="thread_id" value="' +
+                  '<div class="reportDiv"><form id="reportReply"><button class="report-button"><input type="hidden" name="thread_id" value="' +
                     ele._id +
                     '"><input type="hidden" name="reply_id" value="' +
                     rep._id +
-                    '"><button ><input class="report" type="submit" value="Report"><i class="fa fa-flag"></i></button></form>'
+                    '"><input class="report" type="submit" value="Report"><i class="fa fa-flag"></i></button></form>'
                 );
                 thread.push(
-                  '<form id="deleteReply"><input type="hidden" value="' +
+                  '<form id="deleteReply"><button class="delete-button"><input type="hidden" value="' +
                     ele._id +
                     '" name="thread_id" required=""><input type="hidden" value="' +
                     rep._id +
-                    '" name="reply_id" required=""><input type="text" placeholder="password" name="delete_password" required=""><button><input type="submit" value="Delete" class="delete"><i class="fa fa-trash"></i></button></form></div>'
+                    '" name="reply_id" required=""><input class="text-password" type="text" placeholder="password to delete" name="delete_password" required=""><input type="submit" value="Delete" class="delete"><i class="fa fa-trash"></i></button></form></div>'
                 );
                 thread.push("</div>");
               });
@@ -144,7 +144,7 @@
                 '<textarea rows="5" cols="80" type="text" placeholder="Quick reply..." name="text" required=""></textarea><br>'
               );
               thread.push(
-                '<input type="text" placeholder="password to delete" name="delete_password" required=""><input style="margin-left: 5px" type="submit" value="Submit">'
+                '<input class="text-password" type="text" placeholder="password to delete" name="delete_password" required=""><input style="margin-left: 5px" type="submit" value="Submit">'
               );
               thread.push("</form></div></div></div>");
               boardThreads.push(thread.join(""));
