@@ -23,13 +23,13 @@ body {
 textarea{
   background-color: var(--background-color-2);
   color: var(--text-color-1);
+  border-radius: 5px;
 }
 #boardDisplay {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 60%;
-  background-color: yellow;
 }
 a {
   color: var(--text-color-2);
@@ -46,6 +46,14 @@ a {
   border: 0px;
   background: rgba(0, 0, 0, 0);
 }
+.submit{
+  border: 0px;
+  background: rgba(0, 0, 0, 0);
+  color: var(--text-color-2);
+  height: 25px;
+  font-size: 20px;
+  /*vertical-align: text-bottom;*/
+}
 .fa{ 
   font-size: 25px;
   color: var(--text-color-2);
@@ -58,7 +66,7 @@ a {
 }
 
 .reply {
-  border: 1px dotted black;
+  border: 10px dotted white;
   margin: 5px;
   padding: 5px;
   background-color: var(--background-color-1);
@@ -71,7 +79,7 @@ a {
 
 .thread {
   
-  border: 2px solid black;
+  /*border: 2px solid black;*/
   font-size: 20px;
   padding: 5px;
   margin-bottom: 5px;
@@ -86,8 +94,11 @@ a {
 }
 form button {
   display: flex;
-  
-  background-color: 
+  padding: 3px;
+}
+ form button:hover >.text-password{
+  background-color: var(--background-color-1);
+   
 }
  form button:hover{
   background-color: var(--background-color-1);
@@ -108,13 +119,21 @@ form button {
   display: flex;
   justify-content: flex-end;  
 }
+.submitDiv{
+  display: flex;
+  justify-content: flex-start;  
+  width: 70%;
+}
 #submitNewThread {
   margin: 50px;
 }
 .report-button{
   border-radius: 3px;
-  
-  
+    
+}
+.submit-button{
+  border-radius: 3px;
+    
 }
 .delete-button{
   border-radius: 10px ;
@@ -123,12 +142,19 @@ form button {
   align-items: text-bottom;
 }
 .text-password {
-  background-color: var(--background-color-1);
-  border-radius: 10px 0px 0px 10px;
+  background-color: var(--background-color-2);
+  color: var(--text-color-2);
+  /*border-radius: 5px 0px 0px 5px;*/
   margin-top: 0px;
-  border: 0px;
+  border-left: 0px;
+  border-top: 0px;
+  border-right: 0px;
+  border-bottom: 2px solid var(--background-color-1);
   height: 27px;
   width: 85%;
+}
+::placeholder {
+   color: var(--text-color-2);
 }
 button {
   font-size: 20px;

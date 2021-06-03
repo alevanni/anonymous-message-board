@@ -37,14 +37,21 @@
           required=""
         ></textarea
         ><br />
-        <input
+        <div class="submitDiv">
+          
+        
+        <input class="text-password"
           type="text"
           placeholder="password to delete"
           name="delete_password"
           required=""
-        /><br />
-        <input type="submit" value="Submit" />
+        /><br /><button class="submit-button">
+          
+          
+        <input class="submit" type="submit" value="Submit" /><i class="fa fa-comment"></i></button>
+          </div>
       </form>
+        
     </div>
 
     <div id="boardDisplay"></div>
@@ -144,7 +151,7 @@
                 '<textarea rows="5" cols="80" type="text" placeholder="Quick reply..." name="text" required=""></textarea><br>'
               );
               thread.push(
-                '<input class="text-password" type="text" placeholder="password to delete" name="delete_password" required=""><input style="margin-left: 5px" type="submit" value="Submit">'
+                '<div class="submitDiv"><input class="text-password" type="text" placeholder="password to delete" name="delete_password" required=""><button class="submit-button"><input class="submit" style="margin-left: 5px" type="submit" value="Submit"><i class="fa fa-comment"></i></button></div>'
               );
               thread.push("</form></div></div></div>");
               boardThreads.push(thread.join(""));
